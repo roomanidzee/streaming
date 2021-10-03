@@ -1,0 +1,17 @@
+{
+    "type": "record",
+    "name": "PersonRecord",
+    "fields": [
+        {"name": "id", "type": "long"},
+        {"name": "firstname", "type": "string"},
+        {"name": "lastname", "type": "string"},
+        {"name": "email", "type": "string"},
+        {"name": "profession", "type": "string"},
+        {"name": "city", "type": "string"},
+        {"name": "country", "type": "string"},
+        {"name": "random_date", "type": {"type": "long", "logicalType": "timestamp-millis"}}
+    ],
+    "doc": "Definition of Person record model",
+    "namespace": "Person.v1",
+    "aliases": ["person-v1", "person-record"]
+}
