@@ -55,7 +55,7 @@ def read_data_from_csv(resources_path: Path) -> List[PersonRecord]:
 
 if __name__ == '__main__':
 
-    resources_path = Path(__file__).resolve().parents[2] / Path("resources")
+    resources_path = Path(__file__).resolve().parents[2] / Path("resources") / Path("data")
 
     result = read_data_from_csv(resources_path)
 
