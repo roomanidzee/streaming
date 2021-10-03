@@ -1,0 +1,12 @@
+Docker:
+
+docker exec -it kafka bash
+
+/opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper zk:2181 --topic persons-json --partitions 1 --replication-factor 1
+
+/opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper zk:2181 --topic persons-avro --partitions 1 --replication-factor 1
+
+/opt/bitnami/kafka/bin/kafka-run-class.sh kafka.tools.GetOffsetShell \
+>   --broker-list kafka:9092 \
+>   --topic persons-json --time -1 --offsets 1  \
+>   | awk -F  ":" '{sum += $3} END {print sum}'
