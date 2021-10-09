@@ -22,3 +22,13 @@ services:
     depends_on:
       - zookeeper
     container_name: kafka
+  spark-python:
+    image: jupyter/all-spark-notebook:spark-3.1.2
+    ports:
+      - "8888:8888"
+      - "4040-4080:4040-4080"
+    links:
+      - "kafka:kafka-server"
+    volumes:
+      - ./notebooks:/home/jovyan/work/notebooks/
+    container_name: spark-python  

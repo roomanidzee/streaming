@@ -2,3 +2,4 @@
 .DS_Store
 venv
 *pycache*
+.ipynb_checkpoints

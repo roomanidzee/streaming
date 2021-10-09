@@ -21,7 +21,7 @@ async def send(loop, records: List[PersonRecord], limit=1000000):
     for record in records:
 
         await producer.send_and_wait(
-            "persons-json", json.dumps(record.to_json()).encode()
+            "persons-json", record.to_json().encode()
         )
         await producer.send_and_wait("persons-avro", record.serialize())
         counter += 1
