@@ -13,3 +13,8 @@ docker-compose up -d zookeeper kafka
 ```
 docker-compose up -d spark-python
 ```
+
+### Flink
+```
+docker-compose up -d flink-task-manager flink-job-manager zeppelin
+```
