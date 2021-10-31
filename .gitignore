@@ -3,3 +3,4 @@
 venv
 *pycache*
 .ipynb_checkpoints
+.metals
